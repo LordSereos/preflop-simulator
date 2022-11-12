@@ -11,5 +11,12 @@ class MainTest {
         card.setFaceName("queen");
         assertEquals("queen of spades",card.toString());
     }
+    @Test
+    void inputIncorrectCard(){
+        var card = new Card();
+        card.setSuit("spades");
+        card.setFaceName("boat");
+        assertEquals("boat of spades",card.toString());
+    }
 
 }
