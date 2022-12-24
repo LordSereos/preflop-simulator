@@ -39,4 +39,14 @@ public class DeckOfCards {
     public void removeCard(int index){
         deck.remove(index);
     }
+
+    public void removeCardByProperty(Card card){
+
+        for (int i=0;i<deck.size();i++){
+            if (deck.get(i).getFaceName().equals(card.getFaceName()) && deck.get(i).getSuit().equals(card.getSuit())){
+                deck.remove(i);
+                break;
+            }
+        }
+    }
 }

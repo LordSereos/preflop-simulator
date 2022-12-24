@@ -6,13 +6,19 @@ public class main {
         }
 
         System.out.println("Shuffled, size is " + deck.getDeck().size());
-        Player p1 = new Player(deck);
+        Player p1 = new Player(deck, new Card("2","diamonds"), new Card("5","hearts"));
         System.out.println("After p1, size is " + deck.getDeck().size());
         System.out.println(p1.getHand().toString());
-        Table table = new Table(deck);
+
+        Card c1 = new Card("king", "spades");
+        Card c2 = new Card("9", "clubs");
+        Card c3 = new Card("4", "diamonds");
+        Card c4 = new Card("ace", "spades");
+        Card c5 = new Card("8", "hearts");
+
+        Table table = new Table(deck,c1,c2,c3,c4,c5);
         System.out.println("After table, size is " + deck.getDeck().size());
-        System.out.println(table.getCards().toString());
         CombinationFinder cf = new CombinationFinder(table, p1);
-   //     System.out.println(cf.getHandAndTable().toString());
+        System.out.println(cf.getHandAndTable().toString());
     }
 }
